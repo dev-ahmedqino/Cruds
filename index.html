@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruds Application</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="crud">
+        <div class="mood">
+            <button id="moon">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button id="sun">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>  
+        <div class="head">
+            <h2>Cruds Application By Ahmed Qino</h2>
+            <p>Create + Read + Update + Delete + Search Management System</p>
+        </div>
+        <div class="inputs">
+            <label for="" id="label">Attendee Name</label>
+            <input type="text" class="text" id="title" placeholder="Attendee Name">
+            <div class="price">
+                <!-- <label for="" id="label">Price</label> -->
+                <input onkeyup="getTotal()" type="text" class="number" id="price" placeholder="Price">
+                <!-- <label for="" id="label">Taxes</label> -->
+                <input onkeyup="getTotal()" type="text" class="number" id="taxes" placeholder="Instructor">
+                <!-- <label for="" id="label">Advertises</label> -->
+                <input onkeyup="getTotal()" type="text" class="number" id="ads" placeholder="Meals">
+                <!-- <label for="" id="label">Discount</label> -->
+                <input onkeyup="getTotal()" type="text" class="number" id="discount" placeholder="Discount">
+                <small id="total"></small><br>
+            </div>
+            <label for="" id="label">Repeat</label>
+            <input type="number" class="text" id="count" placeholder="Repeat with max : 99">
+            <label for="" id="label">Course Name</label>
+            <input type="text" class="text" id="category" placeholder="Course Name">
+            <button id="submit">Submit</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <input type="text" onkeyup="searchData(this.value)" class="text" id="search" placeholder="Search"> <!-- we add here this.value because we need to get the words that user put it in the search field -->
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search by Title</button> <!-- we add this . id because we want to get the id of the type of search we are going to do -->
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search by Course Name</button> <!-- we add this . id because we want to get the id of the type of search we are going to do -->
+                </div>
+            </div>
+            <div id="deleteAll">
+
+            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Instructor</th>
+                    <th>Meals</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Course Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
